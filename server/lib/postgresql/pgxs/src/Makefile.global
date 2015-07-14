@@ -36,14 +36,14 @@ all:
 .SECONDARY:
 
 # PostgreSQL version number
-VERSION = 9.4.1
+VERSION = 9.4.4
 MAJORVERSION = 9.4
 
 # Support for VPATH builds
 # (PGXS VPATH support is handled separately in pgxs.mk)
 ifndef PGXS
 vpath_build = no
-abs_top_srcdir = /mnt/hgfs/pginstaller.auto/server/source/postgres.osx
+abs_top_srcdir = /mnt/hgfs/pginstaller.pune/server/source/postgres.osx
 
 ifneq ($(vpath_build),yes)
 top_srcdir = $(top_builddir)
@@ -58,7 +58,7 @@ endif # not PGXS
 vpathsearch = `for f in $(addsuffix /$(1),$(subst :, ,. $(VPATH))); do test -r $$f && echo $$f && break; done`
 
 # Saved arguments from configure
-configure_args =  '--prefix=/mnt/hgfs/pginstaller.auto/server/staging/osx' '--with-ldap' '--with-openssl' '--with-perl' '--with-python' '--with-tcl' '--with-bonjour' '--with-pam' '--enable-thread-safety' '--with-libxml' '--with-uuid=e2fs' '--with-includes=/opt/local/Current/include/libxml2:/opt/local/Current/include:/opt/local/Current/include/security' '--docdir=/mnt/hgfs/pginstaller.auto/server/staging/osx/doc/postgresql' '--with-libxslt' '--with-libedit-preferred' '--with-gssapi' 'CFLAGS=-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.7 -arch i386 -arch x86_64' 'LDFLAGS=-L/opt/local/Current/lib'
+configure_args =  '--prefix=/mnt/hgfs/pginstaller.pune/server/staging/osx' '--with-ldap' '--with-openssl' '--with-perl' '--with-python' '--with-tcl' '--with-bonjour' '--with-pam' '--enable-thread-safety' '--with-libxml' '--with-uuid=e2fs' '--with-includes=/opt/local/Current/include/libxml2:/opt/local/Current/include:/opt/local/Current/include/security' '--docdir=/mnt/hgfs/pginstaller.pune/server/staging/osx/doc/postgresql' '--with-libxslt' '--with-libedit-preferred' '--with-gssapi' 'CFLAGS=-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -mmacosx-version-min=10.7 -arch i386 -arch x86_64' 'LDFLAGS=-L/opt/local/Current/lib'
 
 
 ##########################################################################
@@ -78,7 +78,7 @@ ifndef PGXS
 # Note that prefix, exec_prefix, and datarootdir aren't defined in a PGXS build;
 # makefiles may only use the derived variables such as bindir.
 
-prefix := /mnt/hgfs/pginstaller.auto/server/staging/osx
+prefix := /mnt/hgfs/pginstaller.pune/server/staging/osx
 exec_prefix := ${prefix}
 datarootdir := ${prefix}/share
 
@@ -118,7 +118,7 @@ endif
 
 mandir := ${datarootdir}/man
 
-docdir := /mnt/hgfs/pginstaller.auto/server/staging/osx/doc/postgresql
+docdir := /mnt/hgfs/pginstaller.pune/server/staging/osx/doc/postgresql
 ifeq "$(findstring pgsql, $(docdir))" ""
 ifeq "$(findstring postgres, $(docdir))" ""
 override docdir := $(docdir)/postgresql
